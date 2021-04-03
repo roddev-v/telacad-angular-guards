@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'telacad-angular-guards';
+  
+  constructor(private router: Router) {
+  }
+
+  value: number = 0;
+
+  goToComponentA() {
+    this.router.navigate(['component-a'], {queryParams: {value: this.value}});
+  }
+
+  reset() {
+    this.value = 0;
+    this.router.navigate(['/']);
+  }
 }

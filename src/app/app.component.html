@@ -1,6 +1,9 @@
 <div>
   <p>
-    <input type="number" placeholder="Input a number">
+    <input type="number" placeholder="Input a number" [(ngModel)]="value">
   </p>  
+  <button (click)="goToComponentA()">Go to component A</button>
+  <button (click)="reset()">Reset route</button>
+
 </div>
 <router-outlet></router-outlet>
